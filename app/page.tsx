@@ -219,7 +219,8 @@ export default function Page() {
               
               </p>
               <p className="mt-3 text-[19px] leading- text-[#3d4551]">
-              Serving Justice Since: 03/30/2026 - Present
+              Attorney General Xolaaz was sworn in as the 6th elected Attorney General of the State of Ridgeway on March 30th, 2026. He is a experienced prosecutor who has spent more than four years trying cases from fraud to first-degree murder across various ro-states. In efforts to combat growing gang violence and law enforcement misconduct, Xolaaz is proactively working to strengthen our laws, provide better resources for both residents and law enforcement officers and lower the rates of those victimized by crime.
+
             </p>
             <div className="mt-6 flex items-center gap-3 border-t border-[#dfe1e2] pt-5 text-[#9e937aff]">
               <span className="ml-3.5 text-l font-semibold uppercase tracking-[0.12em]">
