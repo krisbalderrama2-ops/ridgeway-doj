@@ -219,7 +219,7 @@ export default function Page() {
               
               </p>
               <p className="mt-3 text-[19px] leading- text-[#3d4551]">
-                Attorney General Xolaaz leads the Ridgeway Department of Justice with a commitment to fair prosecution, public accountability, and the rule of law. Appointed in March 2026, the Attorney General oversees all prosecutorial operations across the State of Ridgeway.
+                Attorney General Xolaaz leads the Ridgeway Department of Justice with a commitment to fair prosecution, public accountability, and the rule of law. Assuming office in April 2026, the Attorney General oversees all prosecutorial operations across the State of Ridgeway.
             </p>
             <div className="mt-6 flex items-center gap-3 border-t border-[#dfe1e2] pt-5 text-[#9e937aff]">
               <span className="ml-3.5 text-l font-semibold uppercase tracking-[0.12em]">
