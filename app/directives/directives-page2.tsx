@@ -1,5 +1,6 @@
 "use client";
 
+import { Search } from "lucide-react";
 
 export default function DirectivesPage() {
   const utilityLinks = ["Our Offices", "Find Help", "Contact Us"];
@@ -17,25 +18,25 @@ export default function DirectivesPage() {
       title: "Directive No. 2026-001: Interagency Communications Policy",
       date: "March 2, 2026",
       desc: "Establishes communication standards between Ridgeway law enforcement agencies and DOJ divisions.",
-      link: "https://drive.google.com/file/d/FILE_ID/view",
+      link: "https://drive.google.com/file/d/FILE_ID/view", // TODO: Replace FILE_ID with real Google Drive file ID
     },
     {
       title: "Directive No. 2026-002: Public Integrity Reporting Procedures",
       date: "February 26, 2026",
       desc: "Outlines procedures for reporting misconduct, submitting complaints, and coordinating investigations.",
-      link: "https://drive.google.com/file/d/FILE_ID/view",
-    }
+      link: "https://drive.google.com/file/d/FILE_ID/view", // TODO: Replace FILE_ID with real Google Drive file ID
+    },
   ];
 
   return (
     <main className="min-h-screen bg-white text-[#1b1b1b]">
+      {/* Top utility bar */}
       <div className="border-b border-[#dfe1e2] bg-[#f0f0f0] text-[13px]">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2">
           <div className="flex items-center gap-2">
             <span className="font-semibold">
               An official Department of Justice website for the State of Ridgeway
             </span>
-            <span className="text-[#5c5c5c]"></span>
           </div>
           <div className="hidden items-center gap-6 text-[#005ea2] md:flex">
             {utilityLinks.map((link) => (
@@ -47,6 +48,7 @@ export default function DirectivesPage() {
         </div>
       </div>
 
+      {/* Header */}
       <header className="border-b border-[#dfe1e2] bg-white">
         <div className="mx-auto max-w-7xl px-4 py-6">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
@@ -62,19 +64,20 @@ export default function DirectivesPage() {
                 <p className="text-[12px] uppercase tracking-[0.18em] text-[#565c65]">
                   State of Ridgeway
                 </p>
-                <h1 className="font-serif text-[38px] leading-none text-[#9e937aff]">
+                <h1 className="font-serif text-[38px] leading-none text-[#9e937a]">
                   Department of Justice
                 </h1>
               </div>
             </div>
 
             <div className="flex w-full items-center gap-2 lg:w-auto">
-            <div className="relative w-full lg:w-[360px]">
-  <input
-    className="w-full border border-[#565c65] py-2 pl-3 pr-3 text-sm outline-none focus:ring-2 focus:ring-[#005ea2]"
-    placeholder="Search ridgewaydoj.gov"
-  />
-</div>
+              <div className="relative w-full lg:w-[360px]">
+                <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#565c65]" />
+                <input
+                  className="w-full border border-[#565c65] py-2 pl-10 pr-3 text-sm outline-none focus:ring-2 focus:ring-[#005ea2]"
+                  placeholder="Search ridgewaydoj.gov"
+                />
+              </div>
               <button className="bg-[#9e937a] px-4 py-2 text-sm font-semibold text-white hover:bg-[#6f654f]">
                 Search
               </button>
@@ -82,10 +85,10 @@ export default function DirectivesPage() {
           </div>
         </div>
 
-        <nav className="bg-[#9e937aff] text-white">
+        <nav className="bg-[#9e937a] text-white">
           <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-2 px-4 py-3 text-[15px] font-medium">
             {mainNav.map((item) => (
-              <a key={item} href="#" className="underline-offset-4 hover:underline">
+              <a key={item} href={item === "Home" ? "/" : "#"} className="underline-offset-4 hover:underline">
                 {item}
               </a>
             ))}
@@ -93,23 +96,27 @@ export default function DirectivesPage() {
         </nav>
       </header>
 
+      {/* Breadcrumb */}
       <section className="border-b border-[#dfe1e2] bg-[#f8f8f8]">
         <div className="mx-auto max-w-7xl px-4 py-8">
           <div className="text-sm text-[#565c65]">
-            <span>Ridgeway DOJ</span>
+            <a href="/" className="hover:underline">Ridgeway DOJ</a>
             <span className="mx-2">&gt;</span>
             <span>Office of the Attorney General</span>
             <span className="mx-2">&gt;</span>
-            <span className="font-semibold text-[#9e937aff]">Directives</span>
+            <span className="font-semibold text-[#9e937a]">Directives</span>
           </div>
         </div>
       </section>
 
+      {/* Main content */}
       <section className="mx-auto max-w-7xl px-4 py-14">
         <div className="grid gap-10 lg:grid-cols-[260px_1fr]">
+
+          {/* Sidebar */}
           <aside>
             <div className="border border-[#dfe1e2] bg-[#f8f8f8]">
-              <div className="border-b border-[#dfe1e2] bg-[#9e937aff] px-5 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-white">
+              <div className="border-b border-[#dfe1e2] bg-[#9e937a] px-5 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-white">
                 Office of the Attorney General
               </div>
               <div className="px-5 py-5">
@@ -125,9 +132,11 @@ export default function DirectivesPage() {
                     </a>
                   </li>
                   <li>
-                    <a href="/directives" className="font-semibold text-[#9e937aff] hover:underline">
+                    <a href="/directives" className="font-semibold text-[#9e937a] hover:underline">
                       Select Directives
                     </a>
+                  </li>
+                  <li>
                     <a href="#" className="text-[#3d4551] hover:underline">
                       Archives
                     </a>
@@ -137,8 +146,9 @@ export default function DirectivesPage() {
             </div>
           </aside>
 
+          {/* Directives content */}
           <div>
-            <h2 className="font-serif text-5xl leading-tight text-[#9e937aff]">
+            <h2 className="font-serif text-5xl leading-tight text-[#9e937a]">
               Select Directives
             </h2>
 
@@ -159,17 +169,17 @@ export default function DirectivesPage() {
             <div className="mt-10 space-y-6">
               {directives.map((item) => (
                 <div key={item.title} className="border border-[#dfe1e2] bg-white p-6 shadow-sm">
-<h3 className="font-serif text-2xl leading-tight">
-  <a
-    href="https://drive.google.com/file/d/FILE_ID/view"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-[#162e51] hover:text-[#9e937a] hover:underline"
-  >
-    {item.title}
-  </a>
-</h3>
-                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9e937aff]">
+                  <h3 className="font-serif text-2xl leading-tight">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#162e51] hover:text-[#9e937a] hover:underline"
+                    >
+                      {item.title}
+                    </a>
+                  </h3>
+                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#9e937a]">
                     {item.date}
                   </p>
                   <p className="mt-4 leading-7 text-[#3d4551]">
@@ -191,12 +201,13 @@ export default function DirectivesPage() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="bg-[#9e937a] text-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-4">
           <div>
             <h4 className="font-serif text-2xl">Ridgeway Department of Justice</h4>
             <p className="mt-4 text-sm leading-7 text-white/85">
-              text
+              Serving the people of Ridgeway with integrity, accountability, and justice.
             </p>
           </div>
 
